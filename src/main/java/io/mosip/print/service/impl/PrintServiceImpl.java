@@ -629,7 +629,7 @@ public class PrintServiceImpl implements PrintService {
         if (isPhotoSet) {
             qrJsonObj.remove("biometrics");
         }
-        byte[] qrCodeBytes = qrCodeGenerator.generateQrCode(qrJsonObj.toString(), QrVersion.V20);
+        byte[] qrCodeBytes = qrCodeGenerator.generateQrCode(qrJsonObj.toString(), QrVersion.V15);
         if (qrCodeBytes != null) {
             String imageString = Base64.encodeBase64String(qrCodeBytes);
             attributes.put(QRCODE, "data:image/png;base64," + imageString);
